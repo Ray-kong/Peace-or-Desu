@@ -45,12 +45,12 @@ public class Detector : MonoBehaviour
             isWithinCollider = false;
         }
     }
-    
+
     void Update()
     {
         if (isWithinCollider)
         {
-            if(Input.GetKeyDown(KeyCode.K))
+            if (Input.GetKeyDown(KeyCode.K))
             {
                 Debug.Log("K pressed");
             }
@@ -71,134 +71,47 @@ public class Detector : MonoBehaviour
         }
     }
 
-    public void OKButton1()
+    public void OK1()
     {
-        if (textcount == 1)
-        {
-            Text1.SetActive(false);
-            A.SetActive(false);
-            B.SetActive(false);
-            C.SetActive(false);
-            Enemy.SetActive(false);
-            TextAnswer1.SetActive(true);
-            NextButton.SetActive(true);
-         
-        }
-    }
-    public void OKButton2()
-    {
-        if (textcount == 2)
-            Text1.SetActive(false);
         A.SetActive(false);
         B.SetActive(false);
         C.SetActive(false);
-        Enemy.SetActive(false);
+        Text1.SetActive(false);
         TextAnswer1.SetActive(true);
         NextButton.SetActive(true);
-     
     }
-
-    public void OKButto3()
+    public void OK2()
     {
-        if (textcount == 3)
-            Text1.SetActive(false);
         A.SetActive(false);
         B.SetActive(false);
         C.SetActive(false);
-        Enemy.SetActive(false);
-        TextAnswer1.SetActive(true);
+        Text2.SetActive(false);
+        TextAnswer2.SetActive(true);
         NextButton.SetActive(true);
     }
-
-    public void BadButton1()
+    public void OK3()
     {
-        if (textcount == 1)
-        {
-            Text1.SetActive(false);
-            A.SetActive(false);
-            B.SetActive(false);
-            C.SetActive(false);
-            Enemy.SetActive(false);
-            TextAnswer1.SetActive(true);
-            End.SetActive(true);
-            textcount = 0;
-        }
+        A.SetActive(false);
+        B.SetActive(false);
+        C.SetActive(false);
+        Text3.SetActive(false);
+        TextAnswer3.SetActive(true);
+        End.SetActive(true);
     }
-
-    public void BadButton2()
+    //äOÇµÇΩèÍçá
+    public void NO1()
     {
-        if (textcount == 2)
-        {
-            Text2.SetActive(false);
-            A.SetActive(false);
-            B.SetActive(false);
-            C.SetActive(false);
-            Enemy.SetActive(false);
-            TextAnswer2.SetActive(true);
-            End.SetActive(true);
-            textcount = 0;
-        }
+        A.SetActive(false);
+        B.SetActive(false);
+        C.SetActive(false);
+        Text1.SetActive(false);
+        TextAnswer1.SetActive(true);
+        End.SetActive(true);
     }
-
-    public void BadButton3()
-    {
-        if (textcount == 3)
-        {
-            Text3.SetActive(false);
-            A.SetActive(false);
-            B.SetActive(false);
-            C.SetActive(false);
-            Enemy.SetActive(false);
-            TextAnswer3.SetActive(true);
-            End.SetActive(true);
-            textcount = 0;
-        }
-    }
-
-    public void Next1()
-    {
-        if (textcount == 1)
-        {
-            Text2.SetActive(true);
-            A.SetActive(true);
-            B.SetActive(true);
-            C.SetActive(true);
-            textcount++;
-
-        }
-    }
-    public void Next2()
-    {
-        if (textcount == 2)
-        {
-            Text3.SetActive(true);
-            A.SetActive(true);
-            B.SetActive(true);
-            C.SetActive(true);
-            textcount++;
-
-        }
-    }
-
+    //ñ‚ëËâÊñ Ç™è¡Ç¶ÇÈ
     public void EndButton()
     {
-        PanelB.SetActive(false);
-        PanelL.SetActive(false);
-        Text1.SetActive(false);
-        Text2.SetActive(false);
-        Text3.SetActive(false);
-        Name.SetActive(false);
-        Image.SetActive(false);
-        A.SetActive(false);
-        B.SetActive(false);
-        C.SetActive(false);
-        Enemy.SetActive(false);
-        End.SetActive(false);
-        NextButton.SetActive(false);
-        TextAnswer1.SetActive(false);
-        TextAnswer2.SetActive(false);
-        TextAnswer3.SetActive(false);
 
     }
-  
+
 }
