@@ -25,7 +25,8 @@ void Update()
     }
     
     // Calculate the direction of movement
-    Vector3 direction = patrolPoints[targetPoint].position - transform.position;
+    var position = transform.position;
+    Vector3 direction = patrolPoints[targetPoint].position - position;
 
     // Get the angle to the target point
     float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -37,7 +38,8 @@ void Update()
     // Rotate the object to face the direction of movement
     transform.rotation = Quaternion.Euler(0, 0, angle);
 
-    transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
+    position = Vector3.MoveTowards(position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
+    transform.position = position;
 }
 
 
