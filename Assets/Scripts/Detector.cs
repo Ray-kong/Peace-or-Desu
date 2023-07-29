@@ -5,6 +5,7 @@ public class Detector : MonoBehaviour
     [SerializeField] private string objectTag = "Player";
     [HideInInspector] public bool isWithinCollider;
 
+
     public GameObject flowChartObj;
 
     void OnTriggerStay2D(Collider2D other)
