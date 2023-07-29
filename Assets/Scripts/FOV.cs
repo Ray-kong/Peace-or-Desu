@@ -1,13 +1,15 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FOV : MonoBehaviour
 {
     // FOV radius
     public float viewRadius;
+    private int cnt = 0;
 
-  
 
     // FOV angle
     [Range(0, 360)]
@@ -29,6 +31,21 @@ public class FOV : MonoBehaviour
     {
         // Start the Coroutine to find targets with a delay
         StartCoroutine("FindTargetsWithDelay", .2f);
+    }
+    
+    private void Update()
+    {
+        if (cnt > 1800)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            foreach (Transform visibleTarget in visibleTargets)
+            {
+                cnt++;
+            }
+        }
     }
 
     // Coroutine that finds targets with a delay
@@ -81,7 +98,9 @@ public class FOV : MonoBehaviour
     }
     return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
     }
-   
+
+
+
 
     // Draw the FOV in the Unity Editor for debug purposes
     void OnDrawGizmos()

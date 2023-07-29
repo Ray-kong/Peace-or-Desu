@@ -2,23 +2,23 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Threading.Tasks;//’Ç‰Á
+using System.Threading.Tasks;//ï¿½Ç‰ï¿½
 
 
 public class StartButtonScripts : MonoBehaviour
 {
-    //@ƒXƒ^[ƒgƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚çŽÀs‚·‚é
+    //ï¿½@ï¿½Xï¿½^ï¿½[ï¿½gï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½sï¿½ï¿½ï¿½ï¿½
 
     public Fade fades;
 
     public void StartGame()
     {
         Invoke("DelayedAction", 1f);
-        fades.FadeIn(0.5f, () => print("ƒtƒF[ƒhƒCƒ“Š®—¹"));
+        fades.FadeIn(0.5f, () => print("ï¿½tï¿½Fï¿½[ï¿½hï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"));
     }
     private void DelayedAction()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Level 1");
         
     }
 }

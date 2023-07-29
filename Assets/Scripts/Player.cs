@@ -92,9 +92,7 @@ public class Player : MonoBehaviour
                 Bwalk.SetActive(false);
                 Rwalk.SetActive(false);
                 Lwalk.SetActive(true);
-
-                Debug.Log("BUTTON");
-
+                
             }
 
             else {
