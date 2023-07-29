@@ -18,6 +18,8 @@ public class PatrolAI : MonoBehaviour
     // Update is called once per frame
 void Update()
 {
+
+       
     if (transform.position == patrolPoints[targetPoint].position)
     {
         UpdateTargetPoint();
@@ -35,7 +37,7 @@ void Update()
     angle -= 90;
 
     // Rotate the object to face the direction of movement
-    transform.rotation = Quaternion.Euler(0, 0, angle);
+    transform.rotation = Quaternion.Euler(0, 0, -angle);
 
     transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
 }
