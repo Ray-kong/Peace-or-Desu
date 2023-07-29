@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFOV : MonoBehaviour
+public class FOV : MonoBehaviour
 {
     // FOV radius
     public float viewRadius;
