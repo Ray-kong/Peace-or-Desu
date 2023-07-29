@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Detector : MonoBehaviour
@@ -40,6 +38,7 @@ public class Detector : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.K))
             {
                 Debug.Log("K pressed");
+                Player.Attack();
             }
             else if (Input.GetKeyDown(KeyCode.E))
             {
