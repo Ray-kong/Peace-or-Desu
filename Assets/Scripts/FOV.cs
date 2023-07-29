@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFOV : MonoBehaviour
+public class FOV : MonoBehaviour
 {
     // FOV radius
     public float viewRadius;
-    
+
+  
+
     // FOV angle
     [Range(0, 360)]
     public float viewAngle;
@@ -17,6 +19,7 @@ public class EnemyFOV : MonoBehaviour
     // LayerMask to identify obstacles
     public LayerMask obstacleMask;
 
+    public GameObject fovVisualObject;
     // List of targets visible from the current position
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -72,12 +75,13 @@ public class EnemyFOV : MonoBehaviour
     // Convert an angle into a direction
     public Vector2 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
     {
-        if (!angleIsGlobal)
-        {
-            angleInDegrees += transform.eulerAngles.z;
-        }
-        return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+      if (!angleIsGlobal)
+    {
+      angleInDegrees += transform.eulerAngles.z;
     }
+    return new Vector2(Mathf.Sin(angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(angleInDegrees * Mathf.Deg2Rad));
+    }
+   
 
     // Draw the FOV in the Unity Editor for debug purposes
     void OnDrawGizmos()
@@ -93,6 +97,11 @@ public class EnemyFOV : MonoBehaviour
         Gizmos.DrawLine(transform.position, transform.position + (Vector3)viewAngleA * viewRadius);
         Gizmos.DrawLine(transform.position, transform.position + (Vector3)viewAngleB * viewRadius);
 
+        if (fovVisualObject != null)
+        {
+            fovVisualObject.transform.rotation = Quaternion.Euler(0f, 0f,0f);
+        }
+
         // Draw lines to visible targets
         Gizmos.color = Color.red;
         foreach (Transform visibleTarget in visibleTargets)
@@ -100,4 +109,6 @@ public class EnemyFOV : MonoBehaviour
             Gizmos.DrawLine(transform.position, visibleTarget.position);
         }
     }
+
+   
 }
