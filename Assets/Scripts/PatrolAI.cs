@@ -16,15 +16,31 @@ public class PatrolAI : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+void Update()
+{
+    if (transform.position == patrolPoints[targetPoint].position)
     {
-        if(transform.position == patrolPoints[targetPoint].position)
-        {
-            UpdateTargetPoint();
-            Debug.Log("Target Int: " + targetPoint);
-        }
-        transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
+        UpdateTargetPoint();
+        //Debug.Log("Target Int: " + targetPoint);
     }
+    
+    // Calculate the direction of movement
+    Vector3 direction = patrolPoints[targetPoint].position - transform.position;
+
+    // Get the angle to the target point
+    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+    // Subtract 90 degrees to make the top of the object face the direction of movement
+    // (assuming that the top of the object points up when rotation is 0)
+    angle -= 90;
+
+    // Rotate the object to face the direction of movement
+    transform.rotation = Quaternion.Euler(0, 0, angle);
+
+    transform.position = Vector3.MoveTowards(transform.position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
+}
+
+
 
     void UpdateTargetPoint()
     {
