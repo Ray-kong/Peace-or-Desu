@@ -5,6 +5,7 @@ public class Detector : MonoBehaviour
     [SerializeField] private string objectTag = "Player";
     [HideInInspector] public bool isWithinCollider;
 
+
     public GameObject flowChartObj;
 
     PatrolAI patrolAI;
