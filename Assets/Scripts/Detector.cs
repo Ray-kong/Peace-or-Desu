@@ -60,4 +60,15 @@ public class Detector : MonoBehaviour
             }
         }
     }
+
+    public void OKButton()
+    {
+        Text.SetActive(false);
+        Name.SetActive(false);
+        Image.SetActive(false);
+        A.SetActive(false);
+        B.SetActive(false);
+        C.SetActive(false);
+        Enemy.SetActive(false);
+    }
 }
