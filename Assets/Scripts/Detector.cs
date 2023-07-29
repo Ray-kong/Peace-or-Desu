@@ -9,11 +9,13 @@ public class Detector : MonoBehaviour
     [SerializeField] public GameObject PanelB;
     [SerializeField] public GameObject PanelL;
     [SerializeField] public GameObject Text;
+    [SerializeField] public GameObject TextAnswer;
     [SerializeField] public GameObject Name;
     [SerializeField] public GameObject Image;
     [SerializeField] public GameObject A;
     [SerializeField] public GameObject B;
     [SerializeField] public GameObject C;
+    [SerializeField] public GameObject NextButton;
     [SerializeField] public GameObject Enemy;
 
     public GameObject flowChartObj;
@@ -70,5 +72,7 @@ public class Detector : MonoBehaviour
         B.SetActive(false);
         C.SetActive(false);
         Enemy.SetActive(false);
+        TextAnswer.SetActive(true);
+        NextButton.SetActive(true);
     }
 }
