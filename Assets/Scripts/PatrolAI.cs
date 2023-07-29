@@ -6,7 +6,7 @@ public class PatrolAI : MonoBehaviour
 {
     public Transform[] patrolPoints;
     private int targetPoint;
-    public float speed;
+ private float speed = 3;
     private bool movingForwards = true; // New variable to keep track of direction
     
     // Start is called before the first frame update
