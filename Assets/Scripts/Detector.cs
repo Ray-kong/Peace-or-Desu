@@ -7,6 +7,8 @@ public class Detector : MonoBehaviour
 
     public GameObject flowChartObj;
 
+    PatrolAI patrolAI;
+
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag(objectTag))
@@ -36,6 +38,7 @@ public class Detector : MonoBehaviour
             {
                 Debug.Log("E pressed");
                 flowChartObj.SetActive(true);
+                patrolAI.Nspeed = 0f;
             }
         }
     }

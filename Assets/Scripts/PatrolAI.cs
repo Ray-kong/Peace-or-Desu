@@ -6,7 +6,7 @@ public class PatrolAI : MonoBehaviour
 {
     public Transform[] patrolPoints;
     private int targetPoint;
- private float speed = 3;
+    public  float Nspeed = 3f;
     private bool movingForwards = true; // New variable to keep track of direction
     
     // Start is called before the first frame update
@@ -40,11 +40,15 @@ void Update()
     // Rotate the object to face the direction of movement
     transform.rotation = Quaternion.Euler(0, 0, -angle);
 
-    position = Vector3.MoveTowards(position, patrolPoints[targetPoint].position, speed * Time.deltaTime);
+    position = Vector3.MoveTowards(position, patrolPoints[targetPoint].position, Nspeed * Time.deltaTime);
     transform.position = position;
 }
 
-
+    public void SpeedDown()
+    {
+        
+        Nspeed = 5f;
+    }
 
     void UpdateTargetPoint()
     {
