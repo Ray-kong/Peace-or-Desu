@@ -30,9 +30,4 @@ public class Player : MonoBehaviour
         rb.velocity = movement * speed;
 
     }
-
-    public static void Attack()
-    {
-        
-    }
 }
